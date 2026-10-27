@@ -1,0 +1,29 @@
+{
+  "name": "link-keep",
+  "version": "1.0.0",
+  "description": "The Link Keep - link organizer for Windows",
+  "main": "main.js",
+  "author": "Yeah",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.yeah.linkkeep",
+    "productName": "The Link Keep",
+    "files": ["main.js", "index.html", "package.json"],
+    "win": {
+      "target": ["nsis", "portable"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": { "output": "dist" }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  }
+}
